@@ -29,3 +29,11 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
 })
 .catch(err => console.log(err))
 
+window.onload = displayClock()
+
+function displayClock () {const date = new Date()
+let time = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+document.getElementById("time").textContent = time
+setTimeout(displayClock, 1000)
+}
+
