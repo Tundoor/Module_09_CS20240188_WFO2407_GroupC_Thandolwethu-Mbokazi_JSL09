@@ -1,13 +1,16 @@
 // Fetches background image from  Api
 
 fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=universe')
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) {
+            throw Error("Image not available")
+        }
+        return res.json() })
     .then(data => {
         document.getElementById('body').style.backgroundImage = `url(${data.urls.full})`
         // Gets the author's name.
         document.getElementById('author').textContent = `By: ${data.user.name}`
-    }) 
-    // Add catch 
+    }) .catch(err => console.error(err))
         
 
     // fetches crypto currency
@@ -29,6 +32,7 @@ fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
 })
 .catch(err => console.log(err))
 
+// Makes the time work
 window.onload = displayClock()
 
 function displayClock () {const date = new Date()
@@ -37,3 +41,20 @@ document.getElementById("time").textContent = time
 setTimeout(displayClock, 1000)
 }
 
+// fetchs the weather information from API
+navigator.geolocation.getCurrentPosition(position => {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric`)
+    .then(res => {
+        if (!res.ok) {
+            throw Error("Weather data not available")
+        }
+        return res.json()
+    })
+    .then(data => {
+        // Gets image for weather
+        const iconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+        document.getElementById("weather").innerHTML = `
+       <img src='${iconURL}' /> `
+    }) .catch(err => console.error(err))
+
+});
