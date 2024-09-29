@@ -1,12 +1,9 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
 * {
     box-sizing: border-box;
 }
+
 body {
+    margin: 0;
     background: no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -31,6 +28,36 @@ main {
     justify-content: space-between;
 }
 
+/* Time styling section */
+
 h1.time {
     text-align: center;
+    font-size: 7rem;
+}
+
+/* Author Styling */
+
+#author {
+    margin: 20px;
+    font-style: italic;
+}
+ 
+/* Crypto currency section */
+#crypto {
+    margin: 15px;
+    font-size: 1.3rem;
+}
+
+#crypto-top {
+    display: flex;
+    align-items: center;
+}
+
+#crypto-top > span {
+    margin-left: 10px;
+}
+
+div#crypto > p{
+    margin: 0;
+    font-size: 1.0rem;
 }
