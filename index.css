@@ -3,6 +3,9 @@ html, body {
     padding: 0;
 }
 
+* {
+    box-sizing: border-box;
+}
 body {
     background: no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -11,4 +14,23 @@ body {
     background-size: cover;
     color: aliceblue;
     text-shadow: 1px 1px 2px black;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h1.time {
+    text-align: center;
 }
