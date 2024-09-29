@@ -61,3 +61,15 @@ div#crypto > p{
     margin: 0;
     font-size: 1.0rem;
 }
+
+/* Weather Section */
+
+#weather {
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+#weather > p {
+    margin: 0;
+}
